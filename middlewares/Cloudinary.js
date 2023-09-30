@@ -1,13 +1,13 @@
 const multer = require("multer");
-
+require("dotenv").config();
 const cloudinary = require("cloudinary").v2;
 
 // Configurationsdsd
 
 cloudinary.config({
-  cloud_name: "dwewlzhdz",
-  api_key: "396371287127759",
-  api_secret: "hAYiOJyMtVqqwdWMWhx5g3G7R0c",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 // Upload
 const uploadOnCloudinary = async (file) => {
